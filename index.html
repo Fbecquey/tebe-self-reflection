@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Business Mirror — Earth Energetics Business Edge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:    #061A0E;
+      --green-footer:  #082014;
+      --green-bright:  #4ADE80;
+      --green-mid:     #22C55E;
+      --green-dark:    #16A34A;
+      --green-pale:    #A7F3D0;
+      --green-soft:    #6EE7B7;
+      --text-body:     #515856;
+      --text-dark:     #000000;
+      --border:        #EAECED;
+      --white:         #FFFFFF;
+      --amber:         #FCD34D;
+    }
+
+    html, body {
+      background: var(--white);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT WRAPPER ── */
+    .page-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER (matches email template exactly) ── */
+    .header {
+      background: var(--green-deep);
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header svg {
+      display: block;
+      width: 640px;
+      height: 160px;
+    }
+
+    .header-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-logo {
+      width: 110px;
+      padding-left: 20px;
+      padding-right: 4px;
+      flex-shrink: 0;
+    }
+
+    .header-logo img {
+      display: block;
+      width: 94px;
+      margin: 0 auto;
+    }
+
+    .header-text {
+      padding-right: 36px;
+    }
+
+    .header-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: #F0FDF4;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .header-tagline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--green-pale);
+      margin-top: 5px;
+      line-height: 1.2;
+    }
+
+    /* ── CONTENT AREA ── */
+    .content {
+      padding: 0 50px;
+      background: var(--white);
+    }
+
+    .spacer-lg { height: 48px; }
+    .spacer-md { height: 32px; }
+    .spacer-sm { height: 20px; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── HEADLINE BLOCK ── */
+    .headline-block {
+      text-align: center;
+      padding: 40px 0 32px;
+    }
+
+    .eyebrow {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .headline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 34px;
+      line-height: 1.18;
+      font-weight: normal;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      letter-spacing: -0.3px;
+    }
+
+    .subheadline {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-body);
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* ── FRAMING TEXT ── */
+    .framing {
+      padding: 32px 0;
+    }
+
+    .framing p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+
+    .framing p:last-child {
+      margin-bottom: 0;
+    }
+
+    .framing strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* ── REFLECTION AREA ── */
+    .reflection-section {
+      padding: 32px 0 24px;
+    }
+
+    .reflection-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .reflection-textarea {
+      width: 100%;
+      min-height: 340px;
+      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-dark);
+      border: 1.5px solid #C6E8D4;
+      border-radius: 4px;
+      resize: vertical;
+      background: #FAFFFE;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .reflection-textarea:focus {
+      border-color: var(--green-mid);
+      background: var(--white);
+    }
+
+    .reflection-textarea::placeholder {
+      color: #A0B4A8;
+      font-style: italic;
+    }
+
+    /* ── ACTIONS ── */
+    .actions {
+      display: flex;
+      gap: 12px;
+      padding: 16px 0 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn-copy {
+      display: inline-block;
+      padding: 12px 22px;
+      background: linear-gradient(135deg, #16A34A 0%, #22C55E 45%, #4ADE80 100%);
+      color: #020D07;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 28px rgba(74,222,128,0.38);
+      transition: opacity 0.2s;
+    }
+
+    .btn-copy:hover { opacity: 0.88; }
+    .btn-copy:focus-visible { outline: 2px solid var(--green-mid); outline-offset: 3px; }
+
+    .btn-print {
+      display: inline-block;
+      padding: 12px 22px;
+      background: transparent;
+      color: var(--text-body);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-print:hover {
+      border-color: var(--green-mid);
+      color: var(--green-dark);
+    }
+
+    .btn-print:focus-visible { outline: 2px solid var(--green-mid); outline-offset: 3px; }
+
+    .copy-confirm {
+      font-size: 13px;
+      color: var(--green-dark);
+      align-self: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .copy-confirm.visible { opacity: 1; }
+
+    /* ── HANDWRITING NOTE ── */
+    .handwriting-note {
+      background: #F2FBF5;
+      border-left: 3px solid var(--green-mid);
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 32px;
+    }
+
+    .handwriting-note p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-body);
+      margin-bottom: 14px;
+    }
+
+    .handwriting-note p:last-child { margin-bottom: 0; }
+
+    .handwriting-note strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* ── SIGNATURE ── */
+    .signature {
+      padding: 24px 0 40px;
+    }
+
+    .signature p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--green-footer);
+      border-top: 1px solid rgba(74,222,128,0.18);
+      padding: 40px 50px;
+    }
+
+    .footer-inner {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .footer-col {
+      flex: 1;
+    }
+
+    .footer-brand {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green-bright);
+      margin-bottom: 6px;
+    }
+
+    .footer-address {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--green-soft);
+    }
+
+    .footer-note {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--green-soft);
+    }
+
+    .footer-note a {
+      color: var(--green-bright);
+      text-decoration: underline;
+    }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      .header-overlay { position: static; }
+      .actions, .btn-copy, .btn-print { display: none; }
+      .reflection-textarea {
+        border: 1px solid #ccc;
+        min-height: 480px;
+        background: white;
+      }
+      .page-wrap { border: none; max-width: 100%; }
+      .footer { display: none; }
+      body { font-size: 13px; }
+      .headline { font-size: 26px; }
+      .handwriting-note { border: 1px solid #ccc; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 660px) {
+      .page-wrap { border: none; }
+      .content { padding: 0 24px; }
+      .headline { font-size: 26px; }
+      .header svg { width: 100%; }
+      .footer { padding: 32px 24px; }
+      .footer-inner { flex-direction: column; gap: 24px; }
+      .actions { flex-direction: column; }
+      .btn-copy, .btn-print { width: 100%; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <div class="header">
+    <svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="wg1" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.16"/>
+          <stop offset="100%" stop-color="#4ADE80" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="wg2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.10"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="wg3" cx="50%" cy="50%" r="40%">
+          <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="wblur"><feGaussianBlur stdDeviation="3"/></filter>
+        <filter id="wblur2"><feGaussianBlur stdDeviation="1.2"/></filter>
+        <linearGradient id="wfadeT" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#061A0E" stop-opacity="1"/>
+          <stop offset="30%" stop-color="#061A0E" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="wfadeB" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="70%" stop-color="#061A0E" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#061A0E" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="320" cy="80" rx="320" ry="60" fill="url(#wg1)">
+        <animate attributeName="rx" values="320;270;320" dur="18s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.5;1" dur="18s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="80" cy="80" rx="140" ry="48" fill="url(#wg2)">
+        <animate attributeName="cx" values="80;140;80" dur="22s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="22s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="560" cy="75" rx="130" ry="44" fill="url(#wg2)">
+        <animate attributeName="cx" values="560;490;560" dur="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="20s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="320" cy="30" rx="80" ry="28" fill="url(#wg3)">
+        <animate attributeName="ry" values="28;42;28" dur="25s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="25s" repeatCount="indefinite"/>
+      </ellipse>
+      <path d="M-50,85 Q160,65 320,80 Q480,95 690,78" fill="none" stroke="#4ADE80" stroke-width="0.9" stroke-opacity="0.28" filter="url(#wblur2)">
+        <animate attributeName="d" values="M-50,85 Q160,65 320,80 Q480,95 690,78;M-50,75 Q160,92 320,70 Q480,52 690,68;M-50,85 Q160,65 320,80 Q480,95 690,78" dur="20s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-50,102 Q200,85 380,100 Q520,112 690,96" fill="none" stroke="#86EFAC" stroke-width="0.6" stroke-opacity="0.18" filter="url(#wblur2)">
+        <animate attributeName="d" values="M-50,102 Q200,85 380,100 Q520,112 690,96;M-50,92 Q200,110 380,88 Q520,72 690,86;M-50,102 Q200,85 380,100 Q520,112 690,96" dur="24s" repeatCount="indefinite"/>
+      </path>
+      <circle cx="160" cy="65" r="1.8" fill="#4ADE80" filter="url(#wblur)">
+        <animate attributeName="opacity" values="0;0.65;0" dur="18s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="65;45;65" dur="18s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="480" cy="98" r="1.5" fill="#86EFAC" filter="url(#wblur)">
+        <animate attributeName="opacity" values="0;0.55;0" dur="22s" begin="6s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="98;75;98" dur="22s" begin="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="320" cy="50" r="1.2" fill="#FCD34D" filter="url(#wblur)">
+        <animate attributeName="opacity" values="0;0.45;0" dur="30s" begin="12s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="0" y="0" width="640" height="48" fill="url(#wfadeT)"/>
+      <rect x="0" y="112" width="640" height="48" fill="url(#wfadeB)"/>
+    </svg>
+    <div class="header-overlay">
+      <div class="header-logo">
+        <img src="https://storage.mlcdn.com/account_image/1693650/882LUyoGGnNTRZKqwAs3hArYDb3pDBhIj5byqgOG.png" width="94" alt="Earth Energetics">
+      </div>
+      <div class="header-text">
+        <p class="header-title">Earth Energetics Business Edge</p>
+        <p class="header-tagline">Energy Reads For Business Owners And Leaders</p>
+      </div>
+    </div>
+  </div>
+  <!-- END HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- HEADLINE BLOCK -->
+    <div class="headline-block">
+      <p class="eyebrow">A private exercise</p>
+      <h1 class="headline">The Business Mirror</h1>
+      <p class="subheadline">An honest look at what you already know but haven't faced yet.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- FRAMING TEXT -->
+    <div class="framing">
+      <p>There are things in every business that the owner knows. Not suspects. <strong>Knows.</strong> And hasn't looked at directly.</p>
+
+      <p>Not because they're unintelligent or avoidant by nature. But because looking costs something. It means deciding. It means admitting that something isn't working, that a direction was wrong, that a pattern has been running longer than it should have.</p>
+
+      <p>This is not a questionnaire. There are no right answers here, no framework to complete, no score at the end. This page is simply a place to write, without the audience of a spreadsheet, a coach, or a plan.</p>
+
+      <p>What you write belongs to you. Nothing is sent anywhere.</p>
+
+      <p><strong>Start anywhere.</strong> The thing you keep not scheduling. The number you haven't looked at in three months. The offer you know isn't working. The conversation you've been meaning to have. The part of the business you're quietly building around instead of through.</p>
+
+      <p>Write until you find the sentence you didn't plan to write. That's usually the one that matters.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- REFLECTION TEXTAREA -->
+    <div class="reflection-section">
+      <label for="reflection" class="reflection-label">Your reflection</label>
+      <textarea
+        id="reflection"
+        class="reflection-textarea"
+        placeholder="Write what comes. Don't edit as you go."
+        aria-label="Business reflection area"
+        spellcheck="false"
+      ></textarea>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button class="btn-copy" id="copyBtn" onclick="copyText()">Copy my notes</button>
+      <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
+      <span class="copy-confirm" id="copyConfirm" aria-live="polite">Copied.</span>
+    </div>
+
+    <hr class="divider">
+
+    <!-- HANDWRITING NOTE -->
+    <div class="handwriting-note" style="margin-top: 32px;">
+      <p><strong>If you'd rather do this by hand, print this page.</strong></p>
+      <p>There's a reason handwriting surfaces things that typing doesn't. When you write by hand, your brain processes at a slower speed, which means your thoughts have to form more deliberately before they reach the page. The internal editor — the one that tidies your thinking before it becomes visible — has less time to intervene.</p>
+      <p>Studies on expressive writing consistently show that handwriting produces more emotionally honest and specific output than typing. The friction is the point. It slows you down enough to catch what you were about to skip over.</p>
+      <p>Use the Print button above. The text area will expand to fill the printed page, blank and ready.</p>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <p>To what shifts the room,<br>
+      <span style="display:block;height:8px;"></span>
+      Françoise<br>Earth Energetics</p>
+    </div>
+
+  </div>
+  <!-- END CONTENT -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">HDRB Publishing</p>
+        <p class="footer-address">3732 Fishcreek Road, #262, Stow<br>Ohio, United States of America</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-note">You received this link in an issue of The Energetic Business Edge. To manage your subscription, return to the email and use the unsubscribe link at the bottom.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function copyText() {
+    const textarea = document.getElementById('reflection');
+    const text = textarea.value;
+    if (!text.trim()) return;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showConfirm).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+
+    function fallbackCopy() {
+      textarea.select();
+      document.execCommand('copy');
+      showConfirm();
+    }
+
+    function showConfirm() {
+      const el = document.getElementById('copyConfirm');
+      el.classList.add('visible');
+      setTimeout(() => el.classList.remove('visible'), 2500);
+    }
+  }
+</script>
+
+</body>
+</html>
